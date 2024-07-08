@@ -26,7 +26,7 @@ import com.finalSW.service.UsuarioServicio;
 
 @RestController
 @RequestMapping("/usuarios")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:420")
 public class UsuarioController{
 	@Autowired
 	UsuarioServicio us;
