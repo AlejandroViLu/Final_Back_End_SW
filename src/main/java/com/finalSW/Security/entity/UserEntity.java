@@ -15,6 +15,7 @@ public class UserEntity extends EntityId{
 	private String password;
 	private List<RoleEnum> roles;
 	private List<ItemCarrito> carrito = new ArrayList<>();
+	private Tarjeta tarjeta = new Tarjeta();
 	public UserEntity(int id, String username, String email, String password, List<RoleEnum> roles) {
 		this.id = id;
 		this.username = username;
@@ -64,6 +65,14 @@ public class UserEntity extends EntityId{
 
 	public void setCarrito(List<ItemCarrito> carrito) {
 		this.carrito = carrito;
+	}
+
+	public Tarjeta getTarjeta() {
+		return tarjeta;
+	}
+
+	public void setTarjeta(Tarjeta tarjeta) {
+		this.tarjeta = tarjeta;
 	}
 	
 	

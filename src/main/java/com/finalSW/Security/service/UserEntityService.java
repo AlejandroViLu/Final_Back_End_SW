@@ -73,7 +73,6 @@ public class UserEntityService {
 				
 	}
 	
-	
 	private UserEntity mapUserFromDto(CreateUserDto d) {
 		int id = Operations.autoIncrement(r.findAll());
 		String password = passwordEncoder.encode(d.getPassword());

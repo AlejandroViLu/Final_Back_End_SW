@@ -40,8 +40,12 @@ public class MainSecurityConfig {
 		http.authenticationManager(am);
 		http.csrf().disable();
 		http.cors();
-		http.authorizeHttpRequests().antMatchers("/auth/**").permitAll()
+		
+		http.authorizeHttpRequests()
+		.antMatchers("/auth/**").permitAll()
+		.antMatchers("/images/**").permitAll()
 		.anyRequest().authenticated();
+		
 		http.exceptionHandling().authenticationEntryPoint(jep);
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		http.addFilterBefore(jf, UsernamePasswordAuthenticationFilter.class);

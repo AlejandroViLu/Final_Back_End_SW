@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.finalSW.CRUD.exceptions.AtributteException;
 import com.finalSW.Security.entity.ItemCarrito;
+import com.finalSW.Security.entity.Tarjeta;
 import com.finalSW.Security.entity.UserEntity;
 import com.finalSW.Security.repository.UserEntityRepository;
 @Service
@@ -28,7 +29,19 @@ public class CarritoService {
 		user.getCarrito().add(itemCarrito);
 		return r.save(user);
 	}
-
+		
+	public UserEntity addTarjeta(String username, Tarjeta tarjeta) {
+		UserEntity user = r.findByUsernameOrEmail(username, username).orElseThrow();
+		user.setTarjeta(tarjeta);
+		return r.save(user);
+	}
+	public Tarjeta getTarjeta(String username) throws AtributteException {
+		UserEntity user = r.findByUsernameOrEmail(username, username).orElseThrow();
+		if(user.getTarjeta() == null) {
+			throw new AtributteException("Carrito Vacio");
+		}
+        return user.getTarjeta();
+	}
 	public UserEntity clearCarrito(String username) {
 		UserEntity user = r.findByUsernameOrEmail(username, username).orElseThrow();
 	    user.getCarrito().clear();

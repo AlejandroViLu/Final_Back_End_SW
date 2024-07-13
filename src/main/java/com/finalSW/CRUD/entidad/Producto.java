@@ -23,6 +23,10 @@ public class Producto extends EntityId{
 		this.categoriaId = categoriaId;
 	}
 	
+	public Producto() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public int getId() {
 		// TODO Auto-generated method stub

@@ -33,7 +33,8 @@ public class CategoriaService {
 		int id = Operations.autoIncrement(rto.findAll());
 		Categoria producto = new Categoria(id,
 				a.getNombre(),
-				a.getDescripcion()
+				a.getDescripcion(),
+				a.getImagen()
 				);
 		return rto.save(producto);
 	}
@@ -46,6 +47,7 @@ public class CategoriaService {
 		
 		categoria.setNombre(a.getNombre());
 		categoria.setDescripcion(a.getDescripcion());
+		categoria.setImagen(a.getImagen());
 		return rto.save(categoria);
 	}
 	

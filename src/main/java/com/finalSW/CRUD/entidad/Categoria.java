@@ -8,10 +8,12 @@ import com.finalSW.global.entity.EntityId;
 public class Categoria extends EntityId{
     private String nombre;
     private String descripcion;
-	public Categoria(int id, String nombre, String descripcion) {
+    private String imagen;
+	public Categoria(int id, String nombre, String descripcion, String imagen) {
 		this.id = id;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
+		this.imagen = imagen;
 	}
 	
 	@Override
@@ -38,4 +40,13 @@ public class Categoria extends EntityId{
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
+
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+	
 }
